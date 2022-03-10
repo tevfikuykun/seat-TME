@@ -1,0 +1,142 @@
+<html>
+    <body>
+        
+
+
+        <div class="container">
+            <form class="form cf">
+                <section class="plan cf">
+                    <input type="radio" name="radio1" id="ibiza" value="ibiza" checked> 
+                     <label class="ibiza-label four col" for="ibiza">
+                        <div class="card">
+                            <div class="img">
+                                <img src="img/IBIZA.png" alt="Ibiza">
+                                <a href="colors.html" target="_PARENT">SELECT</a>
+                            </div> 
+                                
+                        </div>
+                    </label>
+        
+                    &emsp;&emsp;
+                    <input type="radio" name="radio1" id="arona" value="arona" > 
+                    <label class="arona four col" for="arona">
+                                <img src="img/ARONA.png" alt="Arona">
+                                <a href="colors2.html" target="_PARENT">SELECT</a>
+                    </label>
+                    
+                </section>
+                
+                
+            </form>
+        </div>
+        
+        </body>
+
+     
+        
+        <style>
+
+            a{
+                width: 84px;
+                height: 33px;
+                border-radius: 15.5px;
+                background-color: #181818;
+                color: #fff;
+                text-decoration: none;
+                
+                line-height: 14px;
+                text-align: center;
+        
+            }
+
+
+        
+        body {
+            display: grid;
+            place-items: center;
+        }
+        
+        .img {
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit:contain;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0.8;
+            
+        }
+        img:hover{
+            opacity: 1;
+    }
+    
+
+    
+        
+         
+        .container {max-width: 850px; width: 100%; margin: 0 auto;  }
+        .four { width: 507px; max-width: 507px; border-radius: 50%; }
+        
+        
+        
+        .cf:before,
+        .cf:after {
+            content: " ";   
+        }
+        
+        .cf:after {
+            clear: both;    
+        }
+        
+        .cf {
+            display: flex;
+        }
+        
+        
+        .form .plan input{
+            display: none;
+        }
+        
+        .form label{
+            position: relative;
+            color: rgb(255, 255, 255);
+            background-color: .3rem solid #fff;
+            box-shadow: 0 0 .5rem rgba(0, 0, 0, .4);
+            font-size: 26px;
+            text-align: center;
+            height: 519px;
+            line-height: 250px;
+            display: block;
+            border: .3rem solid #fff;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            
+        }
+        
+        .form .plan input:checked + label{
+            border: .3rem solid #fff;
+            background-color: transparent; 
+             
+        }
+        
+        .form .plan input:checked + label:after{
+            content: "\2713";
+            width: 40px;
+            height: 40px;
+            
+            line-height: 40px;
+            border-radius: 100%;
+            border: 2px solid rgb(0, 0, 0);
+            background-color: #141615;
+            z-index: 999;
+            position: absolute;
+            top: 30px;
+            right: 65px;
+        
+        }
+        
+        </style>
+</html>

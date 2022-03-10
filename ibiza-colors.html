@@ -1,0 +1,151 @@
+<html>
+    <body>
+        
+        <img id="myImg" src="img/ibiza-red.png" class="name">
+
+        <div class="container">
+            <form class="form cf">
+                <section class="plan cf">
+                    <input onclick="myFunction('red')" type="radio" name="radio1" id="ibiza" value="ibiza" checked> 
+                     <label class="ibiza-label four col" for="ibiza">
+                        <div class="card">
+                            <div class="img">
+                                <img src="img/red.png" alt="Ibiza">
+                            </div> 
+                                
+                        </div>
+                    </label>
+        
+                    &emsp;&emsp;
+                    <input onclick="myFunction('black')" type="radio" name="radio1" id="arona" value="arona" > 
+                    <label class="arona four col" for="arona">
+                                <img src="img/black.jpg" alt="Arona">
+                    </label>
+                    &emsp;&emsp;
+                    <input onclick="myFunction('white')" type="radio" name="radio1" id="arona2" value="arona2" > 
+                    <label class="aron four col" for="arona2">
+                                <img src="img/white.jpg" alt="Arona2">
+                    </label>
+                </section>          
+            </form>
+        </div>
+        
+        </body>
+
+        <script src="path-to-javascript-file"></script>
+<script>
+  var color= color; 
+</script>
+<script>
+const name = document.querySelector(".name");
+function myFunction(color) {
+  document.getElementById('myImg').src = "img/ibiza-" + color + ".png";
+  document.getElementById("resim").src = "img/ıbıza-" + color + ".png";
+  localStorage.setItem("color", color);  
+}
+
+</script>
+
+<INPUT style="width: 140px;height:95px; border-radius: 11px 11px 11px 0px; font-size:large; border-radius:11px; left: 301px; border: transparent ; top: 1258px; position:absolute; background: #FFFFFF; 
+box-shadow: 0px 2px 70px rgba(0, 0,0, 0.0703671); " type="image" id="resim" src="img/ıbıza-red.png"/>
+
+<INPUT style="width: 795px;height:95px; ; font-size:large; border-radius: -11px 11px 11px 0px;; left: 441px; top: 1258px; border: transparent; position:absolute; background: #FFFFFF; 
+box-shadow: 0px 2px 70px rgba(0, 0,0, 0.0703671); " type="text" readonly value="Total | 193500"/>
+
+<INPUT style="width: 235px;height:95px; border-radius: 0px 11px 11px 0px; border: #181818; text-align: center; color: #FFFFFF; font-size: medium;  text-decoration: none; left: 1005px; top: 1258px; position:absolute; background:#181818; 
+ overflow: hidden; " class="button_active" onclick="location.href='ibiza-acces.html';" type="text" value="ACCESSORIES   ⟶"/>
+
+
+<style>
+
+input[value^="Total 193500"] {
+    color: black;
+    font-weight: bold;
+}
+
+
+        
+        body {
+            display: grid;
+            place-items: center;
+        }
+        
+        .img {
+            overflow: hidden;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit:contain;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 1;
+            
+        }
+
+        
+         
+        .container {max-width: 70px; width: 100%; margin: 0 auto;  }
+        .four { width: 70px; max-width: 70px; border-radius: 50%; }
+        
+        
+        
+        .cf:before,
+        .cf:after {
+            content: " ";   
+        }
+        
+        .cf:after {
+            clear: both;    
+        }
+        
+        .cf {
+            display: flex;
+        }
+        
+        
+        .form .plan input{
+            display: none;
+        }
+        
+        .form label{
+            position: relative;
+            color: rgb(255, 255, 255);
+            background-color: .3rem solid #fff;
+            box-shadow: 0 0 .5rem rgba(0, 0, 0, .4);
+            font-size: 26px;
+            text-align: center;
+            height: 70px;
+            line-height: 250px;
+            display: block;
+            border: .3rem solid #fff;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            
+        }
+        
+        .form .plan input:checked + label{
+            border: .3rem solid #fff;
+            background-color: transparent; 
+             
+        }
+        
+        .form .plan input:checked + label:after{
+            content: "\2713";
+            width: 20px;
+            height: 20px;
+            
+            line-height: 20px;
+            border-radius: 100%;
+            border: 2px solid rgb(0, 0, 0);
+            background-color: #141615;
+            z-index: 999;
+            position: absolute;
+            top: -10px;
+            right: 35px;
+        
+        }
+        
+        </style>
+</html>

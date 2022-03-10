@@ -1,0 +1,180 @@
+<form name="pcoptions">
+  <div class="acces">
+    <label>
+      <select name="buildtimeItem" onchange="calculatePrice()" id="buildtimeItem" class="custom-select" multiple>
+      <option  id="0" value="7500" >SEAT FREE SYNC PACK EASY JET  &nbsp;<br>&nbsp; 7500 TL</option>
+      <option  id="1" value="1250">MAINTENANCE PROGRAM UPGRADE &nbsp;<br>&nbsp; 1250 TL</option>
+      <option  id="2" value="13700">BOOST PACK &nbsp;<br>&nbsp; 13700 TL</option>
+      <option  id="3" value="2500">LIGHT PLUS &nbsp;<br>&nbsp; 2500 TL</option>
+      <option  id="4" value="1000">BRILLIANT SILVER WHEELS &nbsp;<br>&nbsp; 1000 TL</option>
+      <option  id="5" value="13300">MICROSUEDE UPHOLSTERIES &nbsp;<br>&nbsp; 13300 TL  </option>
+</select>
+</label><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<INPUT style="width: 140px;height:95px; border-radius: 11px 11px 11px 0px; font-size:large; border-radius:11px; left: 501px; border: transparent ; top: 958px; position:absolute; background: #FFFFFF; 
+box-shadow: 0px 2px 70px rgba(0, 0,0, 0.0703671); " type="image" src="img/aron-red.png"/>
+
+<INPUT style="width: 795px;height:95px; ; font-size:large; border-radius: -11px 11px 11px 0px;; left: 641px; top: 958px; border: transparent; position:absolute; background: #FFFFFF; 
+box-shadow: 0px 2px 70px rgba(0, 0,0, 0.0703671); " type="text" id="finalpriceexcvat"/>
+
+<INPUT style="width: 235px;height:95px; border-radius: 0px 11px 11px 0px; border: #181818; text-align: center; color: #FFFFFF; font-size: medium;  text-decoration: none; left: 1205px; top: 958px; position:absolute; background:#181818; 
+ overflow: hidden; " class="button_active" onclick="location.href='summary.html';" type="text" value="SUMMARY   ⟶"/>
+
+  </div>
+    
+</form>
+
+  
+
+  <style>
+
+  
+
+    .acces input{
+  float:left;
+}
+
+
+    .select {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position:relative;
+    max-width: 300px;
+    width: 300px;
+    height: 283px;
+    gap: 1px;
+  }
+  
+  .select__item {
+    margin: 12px;
+    padding: 100px;
+    border: 1px solid #6A6A6A;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align:center;
+    border-radius: 11px;
+    background: #ffffff;
+    
+  }
+  
+  .select__item--selected {
+    background: #292929;
+    color: #ffffff;
+  }
+
+  .c {
+    height: 200vh;
+    width: 960px;
+    margin: auto;
+    max-width: 95%;
+
+}
+
+
+::-webkit-scrollbar-track
+{
+    background: #D8D8D8;
+  mix-blend-mode: normal;
+  opacity: 0.57;
+}
+
+::-webkit-scrollbar
+{
+    width: 5px;
+    background-color: #dfe6e9;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar-thumb
+{
+    background-color: #575757;;
+    border-radius: 10px;
+}
+
+  </style>
+  
+
+  <script>
+
+    const tools=["SEAT EASY JET","MAINTENANCE PROGRAM UPGRADE","BOOST PACK","LIGHT PLUS","SILVER WHEELS","MICROSUEDE UPHOLSTERIES"];
+    const addtools=[];
+
+    total=193500;
+
+    class CustomSelect {
+    constructor(originalSelect) {
+      this.originalSelect = originalSelect;
+      this.customSelect = document.createElement("div");
+      this.customSelect.classList.add("select");
+  
+      this.originalSelect.querySelectorAll("option").forEach((optionElement) => {
+        const itemElement = document.createElement("div");
+  
+        itemElement.classList.add("select__item");
+        itemElement.textContent = optionElement.textContent;
+        this.customSelect.appendChild(itemElement);
+  
+        if (optionElement.selected) {
+          this._select(itemElement);
+        }
+        
+
+  
+        itemElement.addEventListener("click", () => {
+          if (
+            this.originalSelect.multiple &&
+            itemElement.classList.contains("select__item--selected")
+          ) {
+            this._deselect(itemElement);
+          } else {
+            this._select(itemElement);
+            
+          }
+        });
+      });
+  
+      this.originalSelect.insertAdjacentElement("afterend", this.customSelect);
+      this.originalSelect.style.display = "none";
+    }
+    
+  
+    _select(itemElement) {
+      const index = Array.from(this.customSelect.children).indexOf(itemElement);
+      var buildtime= document.getElementById(index).value;
+      buildtime = parseInt(buildtime, 10);
+      total=total+buildtime;
+      document.getElementById("finalpriceexcvat").value =  total;
+      addtools.push(tools[index]);
+      sessionStorage.setItem('tools', addtools);
+        
+      if (!this.originalSelect.multiple) {
+        this.customSelect.querySelectorAll(".select__item").forEach((el) => {
+          el.classList.remove("select__item--selected");
+        });
+      }
+  
+      this.originalSelect.querySelectorAll("option")[index].selected = true;
+      itemElement.classList.add("select__item--selected");
+      
+    }
+  
+    _deselect(itemElement) {
+      const index = Array.from(this.customSelect.children).indexOf(itemElement);
+      var buildtime= document.getElementById(index).value;
+      buildtime = parseInt(buildtime, 10);
+      total=total-buildtime;
+      document.getElementById("finalpriceexcvat").value =  total;
+      addtools.pop(tools[index]);
+      sessionStorage.setItem('tools', addtools);
+
+      this.originalSelect.querySelectorAll("option")[index].selected = false;
+      itemElement.classList.remove("select__item--selected");
+    }
+  }
+
+  
+  document.querySelectorAll(".custom-select").forEach((selectElement) => {
+    new CustomSelect(selectElement);
+  });
+  
+  </script>

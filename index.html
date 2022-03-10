@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seat</title>
+		<style >
+***************************************************
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+
+
+*********************************************************************
+			body 
+			{
+				background-color:white;
+                margin: 0;
+                display: grid;
+                width: 1440px;
+                height: 1024px;
+                top: -81px;
+                left: 1518px;
+                place-items: center;
+                
+			}
+			
+nav ul {
+  list-style: none;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+  ;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+ 
+ 
+nav.stroke ul li a,
+nav.fill ul li a {
+  position:relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '';
+  color: transparent;
+  background: rgb(0, 0, 0);
+  height: 4px;
+}
+nav.stroke ul li a:hover:after {
+  width: 15%;
+  ;
+}
+ 
+		</style>
+	</head>
+
+    <body>
+       <center><img src="img/Oval.png" ></center> 
+       <br><br>
+       <center><img src="img/Bitmap.png" ></center>
+       <br>
+
+        
+
+
+       
+       <nav class="stroke">
+            <ul class="menu"  >
+                <li><a href="index.html">MODELS</a></li>
+                <li><a href="colors.html">COLORS</a></li>
+                <a href="" style="color:#aaa; text-decoration: none; font-weight: 800; margin: 0 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";  >ACCESSORIES</a>
+                <a href="" style="color:#aaa; text-decoration: none; font-weight: 800; margin: 0 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";  >SUMMARY</a>
+
+            </ul>
+       </nav>  
+
+
+
+       <iframe width="1400"; height="650"; frameborder="0"; src="models.html" ; scrolling="no" ></iframe>
+
+
+        
+        <script>
+            localStorage.clear();
+        </script>
+        
+        <INPUT style="width: 140px;height:95px; border-radius: 11px 11px 11px 0px; font-size:large; border-radius:11px; left: 501px; border: transparent ; top: 1258px; position:absolute; background: #FFFFFF; 
+        box-shadow: 0px 2px 70px rgba(0, 0,0, 0.0703671); " type="image" src="img/ıbıza-red.png"/>
+        
+        <INPUT style="width: 795px;height:95px; ; font-size:large; border-radius: -11px 11px 11px 0px;; left: 641px; top: 1258px; border: transparent; position:absolute; background: #FFFFFF; 
+        box-shadow: 0px 2px 70px rgba(0, 0,0, 0.0703671); " type="text" id="finalpriceexcvat"/>
+        
+        <INPUT style="width: 235px;height:95px; border-radius: 0px 11px 11px 0px; border: #181818; text-align: center; color: #FFFFFF; font-size: medium;  text-decoration: none; left: 1205px; top: 1258px; position:absolute; background:#181818; 
+         overflow: hidden; " class="button_active" onclick="location.href='ibiza-colors.html';" type="text" value="COLORS   ⟶"/>
+
+</html>

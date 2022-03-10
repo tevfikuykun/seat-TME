@@ -1,0 +1,34 @@
+<h3>MODEL</h3>
+<h4>Ibiza 1.3 Ecotech DSG</h4>
+<hr /> 
+<h3>COLOR</h3>
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = localStorage.getItem("color");
+</script>
+<hr />
+<h3>ACCESSORIES</h3>
+<p id="demo2"></p>
+
+<script>
+document.getElementById("demo2").innerHTML = sessionStorage.getItem("tools");
+</script>
+
+
+<style>
+    
+    h4{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    }
+    h3{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-style: bold;
+    }
+    hr{
+        margin-left:0;
+        text-align: left;
+        width: 350px;
+    }
+</style>
